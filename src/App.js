@@ -1,26 +1,19 @@
-import './App.css';
-import { BrowserRouter, Routes, Route,Outlet,Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
 import Product from './pages/Product/Product';
-import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import './App.scss';
+import Announcement from './components/Announcement/Announcement';
+import Navbar from './components/Navbar/Navbar';
 
-// const Layout = () =>{
-//   return(
-//     <div className="app">
-//       <Navbar />
-//       <Outlet/>
-//       <Footer/>
-//     </div>
-//   )
-// }
 
 function App() {
   return (
     <div className="App">
-        <Navbar />
+     <Announcement/>
+     <Navbar/>
+     
         <BrowserRouter>
       <Routes>
       <Route path="/" element=<Home/> />

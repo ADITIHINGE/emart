@@ -1,46 +1,71 @@
 .navbar{
-    height:65px;
+    height:60px;
     // position:fixed;
 
     .wrapper{
-        padding:10px 30px;
-        display:flex;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
     
-        .flag{
-            height: 15px;
-        }
-        .item{
-            display:flex;
-            align-items: center;
-            font-size: 18px;
-        }
+    
+       
         .left{
-            display:flex;
-           align-items: center;  
-            gap:25px; 
+            flex: 1;
+            display: flex;
+            align-items: center; 
+        
+        .language{
+                font-size: 18px;
+                cursor: pointer; 
+       margin-right: 15px;
+    
+            .searchContainer{
+                border: 0.5px solid lightgray;
+                display: flex;
+                align-items: center;
+                margin-left: 25px;
+                padding: 5px;
+
+               
+            }    
+            }
         }
         .center{
-            font-size: 30px;
-            letter-spacing: 1.5px;
+            flex: 1;
+           text-align: center;
+
+           .logo{
+            font-weight: bold;
+            text-decoration: none;
+            font-Size: 28px;
+            color: rgb(1, 1, 39);
+           }
         }
         .right{
-            display:flex;
+            flex: 1;
+            display: flex;
             align-items: center;
-            gap:25px;
+            justify-content: flex-end;
         }
-            .icons{
-                display:flex;
-                gap:15px;
-                color:rgb(77, 76, 76);
-                cursor: pointer;
-            }
+
+
+        .menuItems{
+            font-size: 20px;
+            cursor: pointer;
+             margin-left: 20px;
+             text-decoration: none;
+             color: black
+        }
+            
             .cartIcons{
                 color:rgb(77, 76, 76);
                 // cursor: pointer;
                 position: relative;
+                margin-left: 20px;
+                width:30px
             }
-             .cartIcons   span{
+            .cartIcons   span{
                     font-size:12px;
                     width:20px;
                     height:20px;

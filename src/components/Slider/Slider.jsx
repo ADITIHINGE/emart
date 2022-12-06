@@ -1,72 +1,111 @@
 import React,{useState} from 'react'
-import EastIcon from '@mui/icons-material/East';
-import WestIcon from '@mui/icons-material/West';
-import ImageSlider, { Slide } from "react-auto-image-slider";
-import './Slider.scss'
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import './Slider.scss';
+
 
 const Slider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-   const [currentSlide, setCurrentSlide] =useState(0)
-   
+  const data = [
+    "https://i.ibb.co/cDLBk5h/bg-1.jpg",
+"https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
+"https://i.ibb.co/CBGRLhG/bg-4.jpg", 
+];
 
-    const data =[
-        "https://i.ibb.co/cDLBk5h/bg-1.jpg",
-        
-        "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
-           // "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        // "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        // "https://i.ibb.co/H2FRmtV/bg-3.jpg",
-          "https://i.ibb.co/CBGRLhG/bg-4.jpg",
-        
-        
-        
-        // "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      
-          
-    ];
-    // const slideLength = data.length;
-
-    const prevSlide= () => {
-        setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev- 1);
-    }
-
-    const nextSlide= () => {
-        setCurrentSlide(currentSlide === 2? 0 : (prev) => prev + 1);
-    }
-
-
-
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev - 1);
+  };
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === 2 ? 0 : (prev) => prev + 1);
+  };
 
   return (
     <div className="slider">
-     <div className="container" >
-      
-       {/* <img src={data[0]} alt="img1"/>
-       <img src={data[1]} alt="img2"/>
-       <img src={data[2]} alt="img3"/> */}
-       <ImageSlider effectDelay={500} autoPlayDelay={2000} onClick={prevSlide}>
-      <Slide onClick={nextSlide}>
-      <img src={data[0]} alt="img1"/>
-      </Slide>
-      <Slide>
-      <img src={data[1]} alt="img2"/>
-      </Slide>
-      
-      <Slide>
-      <img src={data[2]} alt="img3"/>
-      </Slide>
-    </ImageSlider>
-      
-        </div> 
-    <div className="icons">
-        <div className="icon" onClick={prevSlide}><WestIcon/></div>
-        <div className="icon" onClick={nextSlide}><EastIcon/></div>   
-        </div>  
+      <div className="container" style={{transform:`translateX(-${currentSlide * 100}vw)`}}>
+        <img src={data[0]} alt="" />
+        <img src={data[1]} alt="" />
+        <img src={data[2]} alt="" />
+      </div>
+      <div className="icons">
+        <div className="icon" onClick={prevSlide}>
+          < ArrowBackIosNewOutlinedIcon/>
+        </div>
+        <div className="icon" onClick={nextSlide}>
+          <ArrowForwardIosOutlinedIcon />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
+
+
+
+// const Slider = () => {
+
+//    const [currentSlide, setCurrentSlide] =useState(0)
+   
+
+//     const data =[
+//         "https://i.ibb.co/cDLBk5h/bg-1.jpg",
+//         "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
+//            // "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
+//         // "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
+//         // "https://i.ibb.co/H2FRmtV/bg-3.jpg",
+//           "https://i.ibb.co/CBGRLhG/bg-4.jpg",
+        
+        
+        
+//         // "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      
+          
+//     ];
+//     // const slideLength = data.length;
+
+//     const prevSlide= () => {
+//         setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev- 1);
+//     }
+
+//     const nextSlide= () => {
+//         setCurrentSlide(currentSlide === 2? 0 : (prev) => prev + 1);
+//     }
+
+
+
+
+//   return (
+//     <div className="slider">
+//      <div className="container" >
+      
+//        <img src={data[0]} alt="img1"/>
+//        <img src={data[1]} alt="img2"/>
+//        <img src={data[2]} alt="img3"/>
+//        {/* <ImageSlider effectDelay={500} autoPlayDelay={2000} >
+//       <Slide >
+//       <img src={data[0]} alt="img1"/>
+//       </Slide>
+//       <Slide>
+//       <img src={data[1]} alt="img2"/>
+//       </Slide>
+      
+//       <Slide onClick={data[0]}>
+//       <img src={data[2]} alt="img3"/>
+//       </Slide>
+//     </ImageSlider> */}
+    
+      
+//         </div> 
+//     <div className="icons">
+//         <div className="icon" onClick={prevSlide}><ArrowBackIosNewOutlinedIcon/></div>
+//         <div className="icon" onClick={nextSlide}><ArrowForwardIosOutlinedIcon/></div>   
+//         </div>  
+//     </div>
+//   )
+// }
+
+// export default Slider
 
 
 
