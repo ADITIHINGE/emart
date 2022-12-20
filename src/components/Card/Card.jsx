@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import'./Card.scss';
 
 const Card = ({item}) => {
-   
+  console.log(item);
   return (
-    <div>
-    <Link to={`/product/${item.id}`}/>
+   
+    <Link className="link"to={`/product/${item.id}`}>
      <div className="card">
      <div className="image">
         {item.isNew &&<span>New Season</span>}
@@ -16,13 +16,14 @@ const Card = ({item}) => {
         <h2>{item.title}</h2>
 
         <div className="prices">
-        <h3>₹{item.oldPrice}</h3> 
-            <h3>₹{item.price}</h3>
+        <h3>${item.oldPrice}</h3> 
+            <h3>${item.price}</h3>
         </div>
         <p>{item.reviews}</p>
     </div>
-    </div>
-  )
-}
+   
+    </Link>
+  );
+};
 
-export default Card
+export default Card;
